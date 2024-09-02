@@ -188,7 +188,7 @@ def parse_vdj_html(module: BaseMultiqcModule) -> int:
         if len(data) > 0:
             if s_name in general_data_by_sample:
                 log.debug(f"Duplicate sample name found in {f['fn']}! Overwriting: {s_name}")
-            module.add_data_source(f, s_name, module="cellranger", section="count")
+            module.add_data_source(f, s_name, module="cellranger", section="vdj")
             mapping_by_sample[s_name] = data
             general_data_by_sample[s_name] = data_general_stats
             if data_annotations:
